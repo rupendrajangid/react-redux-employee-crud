@@ -28,56 +28,87 @@ const EmployeeForm = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Add Employee</h2>
+      <div>
+        <h2>Add Employee</h2>
+      </div>
+      <br></br>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Name:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+        <div className="row">
+          <div className="col-lg-1">
+            <label htmlFor="name" className="form-label">
+              Name:
+            </label>
+          </div>
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+
+        <div className="row">
+          <div className="col-lg-1">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+          </div>
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="position" className="form-label">
-            Position:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="position"
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
-          />
+
+        <div className="row">
+          <div className="col-lg-1">
+            <label htmlFor="position" className="form-label">
+              Position:
+            </label>
+          </div>
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                id="position"
+                value={position}
+                onChange={(e) => setPosition(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="department" className="form-label">
-            Department:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="department"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          />
+
+        <div className="row">
+          <div className="col-lg-1">
+            <label htmlFor="department" className="form-label">
+              Department:
+            </label>
+          </div>
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                id="department"
+                value={department}
+                onChange={(e) => setDepartment(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
+
         <button type="submit" className="btn btn-primary">
           Add Employee
         </button>
