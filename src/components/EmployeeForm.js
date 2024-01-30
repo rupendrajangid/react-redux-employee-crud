@@ -1,16 +1,23 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addEmployee } from "../actions/employeeActions";
+import React, { useState } from "react"; // Importing React library and useState hook from react
+import { useDispatch } from "react-redux"; // Importing useDispatch hook from react-redux
+import { addEmployee } from "../actions/employeeActions"; // Importing the addEmployee action creator from the employeeActions.js file
 
+// Function for adding an employee
 const EmployeeForm = () => {
+  // State variables to manage form input values
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [position, setPosition] = useState("");
   const [department, setDepartment] = useState("");
+
+  // Accessing the dispatch function from the Redux
   const dispatch = useDispatch();
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Creating a new employee object with the form input values & unique ID
     const newEmployee = {
       id: new Date().getTime(),
       name,
@@ -18,6 +25,8 @@ const EmployeeForm = () => {
       position,
       department,
     };
+
+    // Dispatch 'addEmployee' action with the new employee data
     dispatch(addEmployee(newEmployee));
     // Reset the form fields
     setName("");
@@ -26,6 +35,7 @@ const EmployeeForm = () => {
     setDepartment("");
   };
 
+  //JSX for render
   return (
     <div className="container mt-4">
       <div>
@@ -117,4 +127,5 @@ const EmployeeForm = () => {
   );
 };
 
+//Exporting the AddEmployeeForm component
 export default EmployeeForm;
